@@ -1,0 +1,35 @@
+<h2>Categories</h2>
+<button type="button" class="btn btn-success mb-2" (click)="createCategory()">
+    <i class="fas fa-plus"></i>
+</button>
+<div class="col-6 col-md-9">
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col"> Id </th>
+                <th scope="col"> Category Name </th>
+                <th scope="col"> Description </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <th scope="row">{{category.id}}</th>
+                <td>{{category.categoryName}}</td>
+                <td>{{category.description}}</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-info" 
+                    (click)="editCategory(category.id)">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger" 
+                    (click)="deleteCategory(category.id)">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
